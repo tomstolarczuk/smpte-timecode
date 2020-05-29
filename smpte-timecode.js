@@ -209,7 +209,7 @@
    * @returns {boolean} value
    */
   Timecode.prototype.isSmallerOrSame = function (timeCode) {
-    return timeCode.frameCount <= this.frameCount;
+    return this.frameCount <= timeCode.frameCount;
   }
 
   /**
@@ -218,16 +218,16 @@
    * @returns {boolean} value
    */
   Timecode.prototype.isBiggerOrSame = function (timeCode) {
-    return timeCode.frameCount >= this.frameCount;
+    return this.frameCount >= timeCode.frameCount;
   }
 
   /**
-   * Compare if smaller or same
+   * Compare if smaller
    * @param {Timecode} timeCode
    * @returns {boolean} value
    */
   Timecode.prototype.isSmaller = function (timeCode) {
-    return timeCode.frameCount < this.frameCount;
+    return this.frameCount < timeCode.frameCount;
   }
 
   /**
@@ -236,7 +236,7 @@
    * @returns {boolean} value
    */
   Timecode.prototype.isBigger = function (timeCode) {
-    return timeCode.frameCount > this.frameCount;
+    return this.frameCount > timeCode.frameCount;
   }
 
   Timecode.prototype.subtract = function (t, rollOverMaxHours) {
