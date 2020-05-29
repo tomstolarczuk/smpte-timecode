@@ -221,6 +221,24 @@
     return timeCode.frameCount >= this.frameCount;
   }
 
+  /**
+   * Compare if smaller or same
+   * @param {Timecode} timeCode
+   * @returns {boolean} value
+   */
+  Timecode.prototype.isSmaller = function (timeCode) {
+    return timeCode.frameCount < this.frameCount;
+  }
+
+  /**
+   * Compare if bigger or same
+   * @param {Timecode} timeCode
+   * @returns {boolean} value
+   */
+  Timecode.prototype.isBigger = function (timeCode) {
+    return timeCode.frameCount > this.frameCount;
+  }
+
   Timecode.prototype.subtract = function (t, rollOverMaxHours) {
     return this.add(t, true, rollOverMaxHours);
   };
