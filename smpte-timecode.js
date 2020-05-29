@@ -203,6 +203,24 @@
     return this;
   };
 
+  /**
+   * Compare if smaller or same
+   * @param {Timecode} timeCode
+   * @returns {boolean} value
+   */
+  Timecode.prototype.isSmallerOrSame = function (timeCode) {
+    return timeCode.frameCount <= this.frameCount;
+  }
+
+  /**
+   * Compare if bigger or same
+   * @param {Timecode} timeCode
+   * @returns {boolean} value
+   */
+  Timecode.prototype.isBiggerOrSame = function (timeCode) {
+    return timeCode.frameCount >= this.frameCount;
+  }
+
   Timecode.prototype.subtract = function (t, rollOverMaxHours) {
     return this.add(t, true, rollOverMaxHours);
   };
